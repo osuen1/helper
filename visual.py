@@ -1,4 +1,5 @@
 from tkinter import Tk, ttk
+import functions as f
 import keyboard
 
 #TODO
@@ -16,8 +17,6 @@ text_area = ttk.Entry()
 text_area.focus()
 text_area.pack(fill='x', padx=20, pady=20)
 
-if text_area.get() != None:
-    keyboard.add_hotkey("f1+enter", lambda: print("hello"))
+keyboard.add_hotkey('f1+enter', lambda: f.cache(text_area.get()))
 
-if __name__ == '__main__':
-    root.mainloop()
+root.mainloop()
